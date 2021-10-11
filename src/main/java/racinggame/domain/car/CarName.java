@@ -1,14 +1,14 @@
-package racinggame.domain;
+package racinggame.domain.car;
 
 public class CarName {
 	private final int CAR_NAME_MIN_LENGTH=1;
 	private final int CAR_NAME_MAX_LENGTH=5;
 
-	String carName;
+	private String name;
 
-	public CarName(String carName) {
-		validateCarName(carName);
-		this.carName=carName;
+	public CarName(String name) {
+		validateCarName(name);
+		this.name=name;
 	}
 
 	private void validateCarName(String carName) {
@@ -18,11 +18,11 @@ public class CarName {
 
 	}
 
-	public String getCarName() {
-		return carName;
+	public String getName() {
+		return name;
 	}
 
-	public void setCarName(String carName) {
-		this.carName = carName;
+	public void setName(String name) {
+		this.name = name;
 	}
 }
