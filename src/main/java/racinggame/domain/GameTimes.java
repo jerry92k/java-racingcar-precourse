@@ -1,4 +1,4 @@
-package racinggame.domain.game;
+package racinggame.domain;
 
 public class GameTimes {
 	private final int TOTAL_TIMES_LOWER_BOUND=1;

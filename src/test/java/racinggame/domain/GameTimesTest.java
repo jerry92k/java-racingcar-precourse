@@ -1,4 +1,4 @@
-package racinggame.domain.game;
+package racinggame.domain;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import racinggame.domain.game.GameTimes;
+import racinggame.domain.GameTimes;
 
 public class GameTimesTest {
 
