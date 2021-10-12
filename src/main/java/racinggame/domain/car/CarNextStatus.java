@@ -1,15 +1,17 @@
 package racinggame.domain.car;
 
 enum CarNextStatus {
-	Forward("전진"),
-	Wait("대기");
-	private String value;
 
-	CarNextStatus(String value) {
+	Wait(0),
+	Forward(1);
+
+	private int value;
+
+	CarNextStatus(int value) {
 		this.value = value;
 	}
 
-	public String getValue() {
+	public int getValue() {
 		return value;
 	}
 }
