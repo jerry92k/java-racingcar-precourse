@@ -1,17 +1,19 @@
 package racinggame.domain.car;
 
+import nextstep.utils.Randoms;
+
 public class RacingCar {
 
-	private final int RANDOM_VAL_MIN=0;
-	private final int RANDOM_VAL_MAX=9;
-	private final int RANDOM_VAL_WAIT_UPPER_BOUND=4;
+	private static final int RANDOM_VAL_MIN = 0;
+	private static final int RANDOM_VAL_MAX = 9;
+	private static final int RANDOM_VAL_WAIT_UPPER_BOUND = 4;
 
 	private CarName carName;
 	private CarPosition carPosition;
 
 	public RacingCar(String name) {
-		this.carName=new CarName(name);
-		this.carPosition=new CarPosition();
+		this.carName = new CarName(name);
+		this.carPosition = new CarPosition();
 	}
 
 	public String getName() {
@@ -22,14 +24,6 @@ public class RacingCar {
 		return getCarPosition().getPosition();
 	}
 
-	public void changeCarName(String rename) {
-		this.carName=new CarName(rename);
-	}
-
-	public void forwardPosition() {
-		getCarPosition().forward();
-	}
-
 	private CarName getCarName() {
 		return carName;
 	}
@@ -38,17 +32,19 @@ public class RacingCar {
 		return carPosition;
 	}
 
-	public void changePosition(CarNextStatus forward) {
-		if(forward == CarNextStatus.Forward){
+	public void nextMove(CarNextStatus forward) {
+		if (forward == CarNextStatus.Forward) {
 			getCarPosition().forward();
 		}
 	}
 
-	public void nextMove() {
+	public void nextPlay() {
+		CarNextStatus nextStatus = getNextStatus(Randoms.pickNumberInRange(RANDOM_VAL_MIN, RANDOM_VAL_MAX));
+		nextMove(nextStatus);
 	}
 
 	public CarNextStatus getNextStatus(int number) {
-		if(number < RANDOM_VAL_WAIT_UPPER_BOUND){
+		if (number < RANDOM_VAL_WAIT_UPPER_BOUND) {
 			return CarNextStatus.Wait;
 		}
 		return CarNextStatus.Forward;
