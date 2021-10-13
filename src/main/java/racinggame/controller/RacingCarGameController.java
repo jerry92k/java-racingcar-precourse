@@ -8,6 +8,14 @@ import racinggame.domain.car.RacingCars;
 import racinggame.domain.type.UiDelimiter;
 import racinggame.exception.InvalidInputCommandException;
 
+/**
+ * @author Kim Jihee
+ * @version 1.0
+ * @since 1.0
+ *
+ * 자동차 게임의 흐름을 제어하고 사용자로부터 받은 입력값에 대해 게임 결과물을 출력하는 클래스
+ */
+
 public class RacingCarGameController {
 
 	private static final String GAME_RESULT_SHOW_START_MESSAGE = "실행 결과";
@@ -67,8 +75,8 @@ public class RacingCarGameController {
 			String[] carNames = getCarNames(inputCarNames);
 			return RacingCars.makeRacingCars(carNames);
 		} catch (InvalidInputCommandException ex) {
-			return initRacingCars();
-		} catch (Exception ex) {
+			return initRacingCars(); // 사용자가 유효하지 않은 값을 입력한 경우 다시 입력 받도록 함
+		} catch (Exception ex) { // 예상치 못한 그 외 예외는 오류가 발생하도록 던짐
 			throw ex;
 		}
 	}
@@ -82,11 +90,13 @@ public class RacingCarGameController {
 		try {
 			String inputTotalGameTimes = readTotalGameTimesInput();
 			int totalGameTimes = getTotalGameTimes(inputTotalGameTimes);
-			return new GameTimes(totalGameTimes);
+			return new GameTimes(totalGameTimes); // 사용자가 유효하지 않은 값을 입력한 경우 다시 입력 받도록 함
 		} catch (InvalidInputCommandException | NumberFormatException ex) {
+		// 입력받은 문자가 정수형이 아니거나 Integer.MAX_VALUE 값을 넘어가면 NumberFormatException 발생
+			System.out.println(ex.getMessage());
 			return initGameTimes();
 		} catch (Exception ex) {
-			throw ex;
+			throw ex; // 예상치 못한 그 외 예외는 오류가 발생하도록 던짐
 		}
 	}
 

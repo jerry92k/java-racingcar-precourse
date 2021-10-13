@@ -3,6 +3,14 @@ package racinggame.domain.car;
 import nextstep.utils.Randoms;
 import racinggame.domain.type.CarNextStatus;
 
+/**
+ * @author Kim Jihee
+ * @version 1.0
+ * @since 1.0
+ *
+ * 자동차 이름, 위치를 멤버 변수로 가진 자동차 클래스
+ */
+
 public class RacingCar {
 
 	private static final int RANDOM_VAL_MIN = 0;

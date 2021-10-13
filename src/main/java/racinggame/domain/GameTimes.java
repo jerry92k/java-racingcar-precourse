@@ -2,6 +2,16 @@ package racinggame.domain;
 
 import racinggame.exception.InvalidInputCommandException;
 
+/**
+ * @author Kim Jihee
+ * @version 1.0
+ * @since 1.0
+ *
+ * 게임의 횟수를 관리하는 클래스
+ * 총 횟수와 시도 횟수를 별도 관리
+ */
+
+
 public class GameTimes {
 	private final static String INPUT_TOTAL_TIMES_ERROR_MESSAGE = "[ERROR] 게임 횟수는 1~2147483647 사이만 가능합니다.";
 	private final static String TRY_AFTER_FINISH_ERROR_MESSAGE = "[ERROR] 게임이 모두 종료되었습니다.";

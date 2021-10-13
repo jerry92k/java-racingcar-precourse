@@ -5,6 +5,11 @@ import java.util.NoSuchElementException;
 import racinggame.exception.InvalidInputCommandException;
 
 /**
+ * @author Kim Jihee
+ * @version 1.0
+ * @since 1.0
+ *
+ * 자동차 이름 String 타입을 래핑한 클래스
  * CarName 객체는 외부에 노출하지 않고 RacingCar 객체에 aggregation 형태로 사용
  */
 class CarName {

@@ -5,6 +5,15 @@ import java.util.List;
 
 import racinggame.domain.type.UiDelimiter;
 
+/**
+ * @author Kim Jihee
+ * @version 1.0
+ * @since 1.0
+ *
+ * 레이싱에 참가하는 자동차들을 관리하는 일급 콜렉터
+ */
+
+
 public class RacingCars {
 
 	List<RacingCar> cars;
