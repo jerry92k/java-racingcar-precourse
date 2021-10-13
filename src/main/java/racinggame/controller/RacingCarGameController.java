@@ -17,11 +17,10 @@ import racinggame.exception.InvalidInputCommandException;
  */
 
 public class RacingCarGameController {
-
+	private final static String INPUT_TOTAL_TIMES_ERROR_MESSAGE = "[ERROR] 게임 횟수는 1~2147483647 사이만 가능합니다.";
 	private static final String GAME_RESULT_SHOW_START_MESSAGE = "실행 결과";
 	private static final String CAR_NAME_INPUT_GUID_MESSAGE = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기즌으로 구분)";
 	private static final String TOTAL_GAME_TIMES_INPUT_GUIDE_MESSAGE = "시도할 횟수는 몇회인가요?";
-	private static final String TOTAL_GAME_TIMES_INPUT_NOT_DIGIT_ERROR_MESSAGE = "[ERROR] 게임 횟수를 숫자로 입력해주세요.";
 	private static final String CAR_NAME_INPUT_ERROR_MESSAGE = "[ERROR] 경주에 참여할 자동차 이름들을 쉼표로 구분하여 입력해주세요.";
 	private static final String FINISH_IS_MESSAGE = "최종 우승자는";
 	private static final String FINISH_END_MESSAGE = "입니다.";
@@ -109,7 +108,7 @@ public class RacingCarGameController {
 		try {
 			return Integer.parseInt(inputTotalGameTimes);
 		} catch (NumberFormatException numberFormatException) {
-			throw new NumberFormatException(TOTAL_GAME_TIMES_INPUT_NOT_DIGIT_ERROR_MESSAGE);
+			throw new NumberFormatException(INPUT_TOTAL_TIMES_ERROR_MESSAGE);
 		}
 	}
 
