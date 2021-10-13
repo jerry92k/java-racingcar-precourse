@@ -30,4 +30,11 @@ public class RacingCars {
 		return cars;
 	}
 
+	public String getCarNames() {
+		List<String> names = new ArrayList<>();
+		for (RacingCar car : cars) {
+			names.add(car.getName());
+		}
+		return String.join(namesDelimiter, names);
+	}
 }
