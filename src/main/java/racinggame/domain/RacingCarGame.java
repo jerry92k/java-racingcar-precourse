@@ -38,7 +38,7 @@ public class RacingCarGame {
 	private List<RacingCar> getInMaxPositionCars() {
 		List<RacingCar> inMaxPositionCars = new ArrayList<>();
 		for (RacingCar car : cars.getCars()) {
-			filterCar(inMaxPositionCars,car);
+			filterCar(inMaxPositionCars, car);
 		}
 		return inMaxPositionCars;
 	}

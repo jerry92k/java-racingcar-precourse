@@ -11,6 +11,6 @@ public class InvalidInputCommandException extends RuntimeException {
 	 */
 
 	public InvalidInputCommandException(String message) {
-		super("[ERROR] : "+message);
+		super("[ERROR] : " + message);
 	}
 }

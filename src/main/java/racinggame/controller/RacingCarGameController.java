@@ -10,8 +10,8 @@ import racinggame.exception.InvalidInputCommandException;
 
 public class RacingCarGameController {
 
-	private static final String GAME_RESULT_SHOW_START_MESSAGE="실행 결과";
-	private static final String CAR_NAME_INPUT_GUID_MESSAGE="경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기즌으로 구분)";
+	private static final String GAME_RESULT_SHOW_START_MESSAGE = "실행 결과";
+	private static final String CAR_NAME_INPUT_GUID_MESSAGE = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기즌으로 구분)";
 	private static final String TOTAL_GAME_TIMES_INPUT_GUIDE_MESSAGE = "시도할 횟수는 몇회인가요?";
 	private static final String TOTAL_GAME_TIMES_INPUT_NOT_DIGIT_ERROR_MESSAGE = "[ERROR] 게임 횟수를 숫자로 입력해주세요.";
 	private static final String CAR_NAME_INPUT_ERROR_MESSAGE = "[ERROR] 경주에 참여할 자동차 이름들을 쉼표로 구분하여 입력해주세요.";
@@ -56,8 +56,9 @@ public class RacingCarGameController {
 	public void findBestCars() {
 		printBestCarNames(racingCarGame.getBestCars().getCarNames());
 	}
-	private void printBestCarNames(String carNames){
-		System.out.println(FINISH_IS_MESSAGE+" "+ carNames + " "+FINISH_END_MESSAGE);
+
+	private void printBestCarNames(String carNames) {
+		System.out.println(FINISH_IS_MESSAGE + " " + carNames + " " + FINISH_END_MESSAGE);
 	}
 
 	private RacingCars initRacingCars() {
@@ -67,12 +68,12 @@ public class RacingCarGameController {
 			return RacingCars.makeRacingCars(carNames);
 		} catch (InvalidInputCommandException ex) {
 			return initRacingCars();
-		} catch (Exception ex){
+		} catch (Exception ex) {
 			throw ex;
 		}
 	}
 
-	private String readCarNamesInput(){
+	private String readCarNamesInput() {
 		System.out.println(CAR_NAME_INPUT_GUID_MESSAGE);
 		return Console.readLine();
 	}
@@ -84,12 +85,12 @@ public class RacingCarGameController {
 			return new GameTimes(totalGameTimes);
 		} catch (InvalidInputCommandException | NumberFormatException ex) {
 			return initGameTimes();
-		} catch (Exception ex){
+		} catch (Exception ex) {
 			throw ex;
 		}
 	}
 
-	private String readTotalGameTimesInput(){
+	private String readTotalGameTimesInput() {
 		System.out.println(TOTAL_GAME_TIMES_INPUT_GUIDE_MESSAGE);
 		return Console.readLine();
 	}

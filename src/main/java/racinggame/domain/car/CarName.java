@@ -8,7 +8,7 @@ import racinggame.exception.InvalidInputCommandException;
  * CarName 객체는 외부에 노출하지 않고 RacingCar 객체에 aggregation 형태로 사용
  */
 class CarName {
-	private final static String CAR_NAME_ERROR_MESSAGE="[ERROR] 유효하지 않은 자동차 이름입니다. 이름의 길이는 1~5 사이 입니다.";
+	private final static String CAR_NAME_ERROR_MESSAGE = "[ERROR] 유효하지 않은 자동차 이름입니다. 이름의 길이는 1~5 사이 입니다.";
 	private final int CAR_NAME_MIN_LENGTH = 1;
 	private final int CAR_NAME_MAX_LENGTH = 5;
 

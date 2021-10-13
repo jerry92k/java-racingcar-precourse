@@ -3,8 +3,8 @@ package racinggame.domain;
 import racinggame.exception.InvalidInputCommandException;
 
 public class GameTimes {
-	private final static String INPUT_TOTAL_TIMES_ERROR_MESSAGE="[ERROR] 게임 횟수는 1~2147483647 사이만 가능합니다.";
-	private final static String TRY_AFTER_FINISH_ERROR_MESSAGE="[ERROR] 게임이 모두 종료되었습니다.";
+	private final static String INPUT_TOTAL_TIMES_ERROR_MESSAGE = "[ERROR] 게임 횟수는 1~2147483647 사이만 가능합니다.";
+	private final static String TRY_AFTER_FINISH_ERROR_MESSAGE = "[ERROR] 게임이 모두 종료되었습니다.";
 	private final static int TOTAL_TIMES_LOWER_BOUND = 1;
 	private final static int TOTAL_TIMES_UPPER_BOUND = Integer.MAX_VALUE;
 	private final int totalTimes;
