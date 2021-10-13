@@ -38,7 +38,7 @@ public class ApplicationTest extends NSTest {
 	}
 
 	@ParameterizedTest
-	@ValueSource(strings = {"0", "-1", "9999999999999","두개"})
+	@ValueSource(strings = {"0", "-1", "9999999999999", "두개"})
 	void 유효하지않은_게임횟수_예외_처리(String gameTimes) {
 		assertSimpleTest(() -> {
 			runNoLineFound("pobi,woni,jes,alca", gameTimes);
@@ -47,11 +47,12 @@ public class ApplicationTest extends NSTest {
 	}
 
 	@Test
-	void 우승자가_여러명인경우(){
+	void 우승자가_여러명인경우() {
 		assertRandomTest(() -> {
-			run("pobi,woni,brek", "3");
-			verify("최종 우승자는 pobi,brek 입니다.");
-		}, MOVING_FORWARD, STOP,MOVING_FORWARD,MOVING_FORWARD, MOVING_FORWARD,MOVING_FORWARD,MOVING_FORWARD, STOP,MOVING_FORWARD);
+				run("pobi,woni,brek", "3");
+				verify("최종 우승자는 pobi,brek 입니다.");
+			}, MOVING_FORWARD, STOP, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, STOP,
+			MOVING_FORWARD);
 	}
 
 	@AfterEach
