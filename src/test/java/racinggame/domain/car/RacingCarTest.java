@@ -13,6 +13,7 @@ import org.mockito.MockedStatic;
 
 import nextstep.utils.Randoms;
 import racinggame.domain.type.CarNextStatus;
+import racinggame.exception.InvalidInputCommandException;
 
 public class RacingCarTest {
 
@@ -36,7 +37,7 @@ public class RacingCarTest {
 	void 유효하지_않은_자동차_이름_예외처리(String name) {
 		assertThatThrownBy(() -> {
 			RacingCar car = new RacingCar(name);
-		}).isInstanceOf(IllegalArgumentException.class);
+		}).isInstanceOf(InvalidInputCommandException.class);
 	}
 
 	@ParameterizedTest

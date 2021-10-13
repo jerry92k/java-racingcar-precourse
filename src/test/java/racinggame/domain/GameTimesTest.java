@@ -7,6 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import racinggame.domain.GameTimes;
+import racinggame.exception.InvalidInputCommandException;
 
 public class GameTimesTest {
 
@@ -23,7 +24,7 @@ public class GameTimesTest {
 
 		assertThatThrownBy(() -> {
 			GameTimes gameTimes = new GameTimes(totalTimes);
-		}).isInstanceOf(IllegalArgumentException.class);
+		}).isInstanceOf(InvalidInputCommandException.class);
 	}
 
 	@Test
