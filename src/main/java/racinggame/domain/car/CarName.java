@@ -29,14 +29,9 @@ class CarName {
 			System.out.println(CAR_NAME_ERROR_MESSAGE);
 			throw new InvalidInputCommandException(CAR_NAME_ERROR_MESSAGE);
 		}
-
 	}
 
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 }
