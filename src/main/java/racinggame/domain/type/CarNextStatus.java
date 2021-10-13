@@ -1,6 +1,6 @@
-package racinggame.domain.car;
+package racinggame.domain.type;
 
-enum CarNextStatus {
+public enum CarNextStatus {
 
 	Wait(0),
 	Forward(1);

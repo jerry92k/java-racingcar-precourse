@@ -1,6 +1,7 @@
 package racinggame.domain.car;
 
 import nextstep.utils.Randoms;
+import racinggame.domain.type.CarNextStatus;
 
 public class RacingCar {
 
