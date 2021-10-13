@@ -5,6 +5,7 @@ import racinggame.domain.GameTimes;
 import racinggame.domain.RacingCarGame;
 import racinggame.domain.car.RacingCar;
 import racinggame.domain.car.RacingCars;
+import racinggame.domain.type.UiDelimiter;
 import racinggame.exception.InvalidInputCommandException;
 
 public class RacingCarGameController {
@@ -16,8 +17,6 @@ public class RacingCarGameController {
 	private static final String CAR_NAME_INPUT_ERROR_MESSAGE = "[ERROR] 경주에 참여할 자동차 이름들을 쉼표로 구분하여 입력해주세요.";
 	private static final String FINISH_IS_MESSAGE = "최종 우승자는";
 	private static final String FINISH_END_MESSAGE = "입니다.";
-	private static final String positionMarker="-";
-	private static final String namesDelimiter=",";
 
 	private RacingCarGame racingCarGame;
 
@@ -49,7 +48,7 @@ public class RacingCarGameController {
 	private void printCarPosition(RacingCar racingCar) {
 		StringBuilder sb = new StringBuilder();
 		for (int t = 0; t < racingCar.getPosition(); t++) {
-			sb.append(positionMarker);
+			sb.append(UiDelimiter.PositionMarker.getValue());
 		}
 		System.out.println(racingCar.getName() + " : " + sb.toString());
 	}
@@ -104,11 +103,11 @@ public class RacingCarGameController {
 	}
 
 	private String[] getCarNames(String inputCarNames) {
-		String[] carNames = inputCarNames.split(namesDelimiter);
+		String[] carNames = inputCarNames.split(UiDelimiter.NamesDelimiter.getValue());
 		if (carNames.length == 0) {
 			throw new IllegalArgumentException(CAR_NAME_INPUT_ERROR_MESSAGE);
 		}
-		return inputCarNames.split(namesDelimiter);
+		return inputCarNames.split(UiDelimiter.NamesDelimiter.getValue());
 	}
 
 }

@@ -3,8 +3,9 @@ package racinggame.domain.car;
 import java.util.ArrayList;
 import java.util.List;
 
+import racinggame.domain.type.UiDelimiter;
+
 public class RacingCars {
-	private static final String namesDelimiter=",";
 
 	List<RacingCar> cars;
 
@@ -35,7 +36,7 @@ public class RacingCars {
 		for (RacingCar car : cars) {
 			names.add(car.getName());
 		}
-		return String.join(namesDelimiter, names);
+		return String.join(UiDelimiter.NamesDelimiter.getValue(), names);
 	}
 
 	public int getMaxCarPosition() {
