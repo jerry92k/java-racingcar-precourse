@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import racinggame.domain.car.RacingCar;
 import racinggame.domain.car.RacingCars;
+import racinggame.domain.gametimes.GameTimesManager;
 import racinggame.domain.type.CarNextStatus;
 
 class RacingCarGameTest {
@@ -16,8 +17,8 @@ class RacingCarGameTest {
 	void beforeEach() {
 		String[] carNames = {"pobi", "crong", "houd"};
 		RacingCars racingCars = RacingCars.makeRacingCars(carNames);
-		GameTimes gameTimes = new GameTimes(7);
-		racingCarGame = new RacingCarGame(racingCars, gameTimes);
+		GameTimesManager timesManager = GameTimesManager.makeGameTimeManager(7);
+		racingCarGame = new RacingCarGame(racingCars, timesManager);
 	}
 
 	@Test

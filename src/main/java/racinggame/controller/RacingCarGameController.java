@@ -1,10 +1,10 @@
 package racinggame.controller;
 
 import nextstep.utils.Console;
-import racinggame.domain.GameTimes;
 import racinggame.domain.RacingCarGame;
 import racinggame.domain.car.RacingCar;
 import racinggame.domain.car.RacingCars;
+import racinggame.domain.gametimes.GameTimesManager;
 import racinggame.domain.type.UiDelimiter;
 import racinggame.exception.InvalidInputCommandException;
 
@@ -32,8 +32,8 @@ public class RacingCarGameController {
 
 	public void initGame() {
 		RacingCars cars = initRacingCars();
-		GameTimes gameTimes = initGameTimes();
-		racingCarGame = new RacingCarGame(cars, gameTimes);
+		GameTimesManager timesManager = initGameTimesManager();
+		racingCarGame = new RacingCarGame(cars, timesManager);
 	}
 
 	public void playGames() {
@@ -85,15 +85,15 @@ public class RacingCarGameController {
 		return Console.readLine();
 	}
 
-	private GameTimes initGameTimes() {
+	private GameTimesManager initGameTimesManager() {
 		try {
 			String inputTotalGameTimes = readTotalGameTimesInput();
 			int totalGameTimes = getTotalGameTimes(inputTotalGameTimes);
-			return new GameTimes(totalGameTimes); // 사용자가 유효하지 않은 값을 입력한 경우 다시 입력 받도록 함
+			return GameTimesManager.makeGameTimeManager(totalGameTimes); // 사용자가 유효하지 않은 값을 입력한 경우 다시 입력 받도록 함
 		} catch (InvalidInputCommandException | NumberFormatException ex) {
 		// 입력받은 문자가 정수형이 아니거나 Integer.MAX_VALUE 값을 넘어가면 NumberFormatException 발생
 			System.out.println(ex.getMessage());
-			return initGameTimes();
+			return initGameTimesManager();
 		} catch (Exception ex) {
 			throw ex; // 예상치 못한 그 외 예외는 오류가 발생하도록 던짐
 		}

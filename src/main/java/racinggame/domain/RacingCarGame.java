@@ -5,6 +5,7 @@ import java.util.List;
 
 import racinggame.domain.car.RacingCar;
 import racinggame.domain.car.RacingCars;
+import racinggame.domain.gametimes.GameTimesManager;
 
 /**
  * @author Kim Jihee
@@ -18,17 +19,17 @@ import racinggame.domain.car.RacingCars;
 public class RacingCarGame {
 
 	private RacingCars cars;
-	private GameTimes gameTimes;
+	private GameTimesManager timesManager;
 
 	// 게임 생성을 위해선 참가 자동차 객체와 총 횟수 객체가 반드시 필요
-	public RacingCarGame(RacingCars cars, GameTimes gameTimes) {
+	public RacingCarGame(RacingCars cars, GameTimesManager timesManager) {
 		this.cars = cars;
-		this.gameTimes = gameTimes;
+		this.timesManager = timesManager;
 	}
 
 	// 게임을 한번 할 때마다 게임 횟수 객체의 시도회수를 증가하고, 자동차들은 각자 난수를 생성하여 포지션을 정한다.
 	public void doNextGame() {
-		gameTimes.addTryTimes();
+		timesManager.addTryTimes();
 		cars.nextPlay();
 	}
 
@@ -36,8 +37,8 @@ public class RacingCarGame {
 		return cars;
 	}
 
-	public GameTimes getGameTimes() {
-		return gameTimes;
+	public GameTimesManager getGameTimes() {
+		return timesManager;
 	}
 
 	public RacingCars getBestCars() {
