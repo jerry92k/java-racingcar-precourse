@@ -21,4 +21,16 @@ class RacingCarsTest {
 		RacingCars racingCars=RacingCars.makeRacingCars(carNames);
 		Assertions.assertThat(racingCars.getCarNames()).isEqualTo("pobi,crong,houd");
 	}
+
+	@Test
+	void 자동차들의_위치중_가장_먼_위치(){
+		String[] carNames={"pobi","crong","houd"};
+		RacingCars racingCars=RacingCars.makeRacingCars(carNames);
+		RacingCar firstCar=racingCars.getCars().get(0);
+		for(int i=1; i<=5; i++) {
+			firstCar.nextMove(CarNextStatus.Forward);
+		}
+		Assertions.assertThat(racingCars.getMaxCarPosition()).isEqualTo(5);
+	}
+
 }

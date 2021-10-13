@@ -37,4 +37,12 @@ public class RacingCars {
 		}
 		return String.join(namesDelimiter, names);
 	}
+
+	public int getMaxCarPosition() {
+		int maxCarPosition = 0;
+		for (RacingCar car : cars) {
+			maxCarPosition = Math.max(maxCarPosition, car.getPosition());
+		}
+		return maxCarPosition;
+	}
 }
